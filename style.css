@@ -1,26 +1,35 @@
-*{
+/* Genel Ayarlar */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-image: url(images/bg.jpg);
+
+body {
+    background-image: url(./images/bg.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-}
-.box{
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
-    background-color: #616261b0;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.box {
+    display: flex;
+    background-color: rgba(97, 98, 97, 0.7);
     border-radius: 50px;
     color: #fff;
+    width: 80%;
+    max-width: 900px;
+    overflow: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-.box-info{
+
+.box-info {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -28,39 +37,73 @@ body{
     width: 50%;
     text-align: center;
 }
-.title{
+
+.title {
     margin-bottom: 30px;
     font-size: 25px;
 }
 
-.info-bottom i{
-font-size: 25px;
-padding: 20px;
-cursor: pointer;
-border-bottom: 2px solid purple;
-border-radius: 50%;
-transition: 0.5 all ease;
-
+.info-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-.info-bottom i:hover{
-    transform: translateY(-10px);
+.info-bottom i {
+    font-size: 22px;
+    padding: 10px;
+    cursor: pointer;
     border-bottom: 2px solid purple;
+    border-radius: 50%;
+    transition: 0.3s ease-in-out;
 }
-.box-image{
+
+.info-bottom i:hover {
+    transform: translateY(-5px);
+}
+
+.box-image {
     width: 50%;
-    padding: 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
 }
-.box-image img{
-    width: 300px;
-    height: 300px;
+
+.box-image img {
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
 }
-.img-title{
-    font-size: 20px;
-    display:block;
-    margin-top: 30px;
+
+.img-title {
+    font-size: 18px;
+    margin-top: 20px;
     text-align: center;
     font-style: italic;
+}
+
+/* Mobil Uyum */
+@media (max-width: 768px) {
+    .box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .box-info, .box-image {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .box-image img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
 }
